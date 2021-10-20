@@ -6,24 +6,26 @@ import sys
 
 import yaml
 from tqdm import tqdm
+import logging
 
 
 def read_yaml(path_to_yaml: str) -> dict:
     with open(path_to_yaml) as yaml_file:
         content = yaml.load(yaml_file, Loader=yaml.FullLoader)
+    logging.info('YAML File: {} parsed Successfully'.format(path_to_yaml))
     return content
 
 
 def create_directory(dir_paths: list):
     for dir_path in dir_paths:
         os.makedirs(dir_path, exist_ok=True)
-        print(f"creating directory: {dir_path}")
+        logging.info(f"creating directory: {dir_path}")
 
 
 def save_metrics(metrics: dict, save_path: str) -> None:
     with open(save_path, "w") as out:
         json.dump(metrics, out, indent=4)
-    print(f"saving metrics to {save_path}")
+    logging.info(f"saving metrics to {save_path}")
 
 
 def copy_files(src_path: str, dest_path: str):

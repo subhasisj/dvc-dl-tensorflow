@@ -1,8 +1,23 @@
-from src.utils.utils import read_yaml, create_directory, copy_files
 import argparse
-import pandas as pd
+import logging
 import os
+
+import pandas as pd
 from tqdm import tqdm
+
+from src.utils.utils import copy_files, create_directory, read_yaml
+
+log_directory = os.path.join(os.getcwd(),"logs")
+# create_directory([log_directory])
+os.makedirs(log_directory,exist_ok=True)
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s:] %(message)s"
+log_filename = "stage-logs.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format=logging_str,
+    filename=os.path.join(log_directory, log_filename),
+    filemode="a",
+)
 
 
 def get_data(path_to_config):
@@ -30,4 +45,9 @@ if __name__ == "__main__":
     args.add_argument("--config", "-c", default="config/config.yaml")
     parsed_args = args.parse_args()
 
-    config = get_data(parsed_args.config)
+    try:
+        logging.info(" >>>>>> Starting Stage 01")
+        get_data(parsed_args.config)
+        logging.info("Stage 01 completed successfully >>>>>>")
+    except Exception as e:
+        logging.exception(e)
