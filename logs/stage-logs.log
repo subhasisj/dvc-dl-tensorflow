@@ -1,0 +1,5 @@
+[2021-10-21 01:28:59,578: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-10-21 01:28:59,581: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-21 01:28:59,587: INFO: utils:] creating directory: ./data/dog
+[2021-10-21 01:28:59,732: INFO: utils:] creating directory: ./data/cat
+[2021-10-21 01:28:59,823: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>

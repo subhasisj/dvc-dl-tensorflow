@@ -1,1 +1,6 @@
 config/secrets.yaml
+src.egg-info
+data/cat/
+data/dog/
+
+__pycache__
