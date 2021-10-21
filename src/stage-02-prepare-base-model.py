@@ -6,6 +6,7 @@ import pandas as pd
 from tqdm import tqdm
 
 from src.utils.utils import copy_files, create_directory, read_yaml
+from src.utils.models import get_vgg16
 
 log_directory = os.path.join(os.getcwd(),"logs")
 os.makedirs(log_directory,exist_ok=True)
