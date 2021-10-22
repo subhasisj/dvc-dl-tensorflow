@@ -2,5 +2,5 @@ config/secrets.yaml
 src.egg-info
 data/cat/
 data/dog/
-
+*.h5
 __pycache__

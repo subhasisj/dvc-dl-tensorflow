@@ -3,6 +3,7 @@ artifacts:
   TRAINED_MODEL_DIR: model
   BASE_MODEL_DIR: base
   BASE_MODEL_NAME: VGG16_base_model.h5
+  UPDATED_MODEL_NAME: updated_VGG16_base_model.h5
   FINETUNED_MODEL_DIR: finetuned
   TENSORBOARD_LOGS_DIR: tensorboard_logs
   CALLBACKS_DIR: callbacks
