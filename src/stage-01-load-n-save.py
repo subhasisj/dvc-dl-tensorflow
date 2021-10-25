@@ -7,9 +7,8 @@ from tqdm import tqdm
 
 from src.utils.utils import copy_files, create_directory, read_yaml
 
-log_directory = os.path.join(os.getcwd(),"logs")
-# create_directory([log_directory])
-os.makedirs(log_directory,exist_ok=True)
+log_directory = os.path.join(os.getcwd(), "logs")
+os.makedirs(log_directory, exist_ok=True)
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s:] %(message)s"
 log_filename = "stage-logs.log"
 logging.basicConfig(
@@ -32,13 +31,6 @@ def get_data(path_to_config):
         create_directory([target_dir])
         copy_files(src_dir, target_dir)
 
-    # # save in local storage
-    # artifact_dir = os.path.join(config["artifacts"]["storage_dir"],config["artifacts"]["raw_local_dir"])
-    # create_directory(dir_paths=[artifact_dir])
-
-    # artifact_file = os.path.join(artifact_dir,config["artifacts"]["raw_local_file"])
-    # df.to_csv(artifact_file,sep=",",index=False)
-
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
@@ -51,3 +43,4 @@ if __name__ == "__main__":
         logging.info("Stage 01 completed successfully >>>>>>")
     except Exception as e:
         logging.exception(e)
+        raise e
