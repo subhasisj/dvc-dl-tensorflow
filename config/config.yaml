@@ -7,6 +7,7 @@ artifacts:
   FINETUNED_MODEL_DIR: finetuned
   TENSORBOARD_LOGS_DIR: tensorboard_logs
   CALLBACKS_DIR: callbacks
+  CHECKPOINT_DIR: checkpoints
 
 data:
   source_path:

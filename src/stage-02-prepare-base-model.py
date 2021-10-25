@@ -71,7 +71,7 @@ if __name__ == "__main__":
     parsed_args = args.parse_args()
 
     try:
-        logging.info(" >>>>>> Starting Stage 01")
+        logging.info(" >>>>>> Starting Stage 01 - Preparing Base Model")
         prepare_base_model(parsed_args.config, parsed_args.params)
         logging.info("Stage 02 completed successfully >>>>>>")
     except Exception as e:
