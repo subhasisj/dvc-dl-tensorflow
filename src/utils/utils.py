@@ -1,12 +1,13 @@
 import json
+import logging
 import os
 import pprint
 import shutil
 import sys
+import time
 
 import yaml
 from tqdm import tqdm
-import logging
 
 
 def read_yaml(path_to_yaml: str) -> dict:
@@ -41,7 +42,13 @@ def copy_files(src_path: str, dest_path: str):
 
         shutil.copy(src_file_path, dest_file_path)
 
+def get_timestamp(filename: str) -> str:
+    current_time = time.asctime(time.localtime()).replace(" ", "_").replace(":", "_")
+    return f"{filename}_{current_time}"
+
 
 if __name__ == "__main__":
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(read_yaml(sys.argv[1]))
+
+    pp.pprint(get_timestamp("test_callback"))
