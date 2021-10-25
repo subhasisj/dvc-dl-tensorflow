@@ -40,12 +40,12 @@ def prepare_base_model(path_to_config, path_to_params):
     model = prepare_model(
         model,
         classes=params["CLASSES"],
-        freeze_all=True,
-        freeze_till=None,
+        freeze_till=2,
         learning_rate=params["LEARNING_RATE"],
+        freeze_all=False,
     )
 
-    def _log_model_summary(model_name):
+    def _log_model_summary(model):
         with io.StringIO() as stream:
             model.summary(print_fn=lambda x: stream.write(f"{x}\n"))
             summary_str = stream.getvalue()
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     try:
         logging.info(" >>>>>> Starting Stage 01")
         prepare_base_model(parsed_args.config, parsed_args.params)
-        logging.info("Stage 01 completed successfully >>>>>>")
+        logging.info("Stage 02 completed successfully >>>>>>")
     except Exception as e:
         logging.exception(e)
         raise e

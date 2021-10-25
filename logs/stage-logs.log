@@ -1,88 +1,11 @@
-[2021-10-21 01:28:59,578: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
-[2021-10-21 01:28:59,581: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-21 01:28:59,587: INFO: utils:] creating directory: ./data/dog
-[2021-10-21 01:28:59,732: INFO: utils:] creating directory: ./data/cat
-[2021-10-21 01:28:59,823: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
-[2021-10-23 02:28:56,566: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:28:56,569: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:28:56,570: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:28:56,571: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:28:56,572: ERROR: stage-02-prepare-base-model:] get_vgg16() missing 1 required positional argument: 'model_path'
-Traceback (most recent call last):
-  File "src/stage-02-prepare-base-model.py", line 67, in <module>
-    prepare_base_model(parsed_args.config, parsed_args.params)
-  File "src/stage-02-prepare-base-model.py", line 37, in prepare_base_model
-    model = get_vgg16(input_shape=params["IMAGE_SIZE"])
-TypeError: get_vgg16() missing 1 required positional argument: 'model_path'
-[2021-10-23 02:29:48,715: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:29:48,718: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:29:48,719: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:29:48,719: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:29:48,719: ERROR: stage-02-prepare-base-model:] module 'tensorflow.keras.applications.vgg16' has no attribute 'Vgg16'
-Traceback (most recent call last):
-  File "src/stage-02-prepare-base-model.py", line 67, in <module>
-    prepare_base_model(parsed_args.config, parsed_args.params)
-  File "src/stage-02-prepare-base-model.py", line 37, in prepare_base_model
-    model = get_vgg16(input_shape=params["IMAGE_SIZE"],model_path=model_path)
-  File "d:\repositories\aiops\dvc\dvc-dl-tensorflow\src\utils\models.py", line 7, in get_vgg16
-    model = tf.keras.applications.vgg16.Vgg16(
-AttributeError: module 'tensorflow.keras.applications.vgg16' has no attribute 'Vgg16'
-[2021-10-23 02:30:15,942: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:30:15,944: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:30:15,946: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:30:15,946: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:30:45,601: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
-[2021-10-23 02:30:45,602: ERROR: stage-02-prepare-base-model:] module 'tensorflow.keras.layers' has no attribute 'flatten'
-Traceback (most recent call last):
-  File "src/stage-02-prepare-base-model.py", line 67, in <module>
-    prepare_base_model(parsed_args.config, parsed_args.params)
-  File "src/stage-02-prepare-base-model.py", line 39, in prepare_base_model
-    model = prepare_model(
-  File "d:\repositories\aiops\dvc\dvc-dl-tensorflow\src\utils\models.py", line 26, in prepare_model
-    flatten_in = tf.keras.layers.flatten()(model.outputs)
-AttributeError: module 'tensorflow.keras.layers' has no attribute 'flatten'
-[2021-10-23 02:31:17,864: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:31:17,866: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:31:17,868: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:31:17,868: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:31:19,042: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
-[2021-10-23 02:31:19,045: ERROR: stage-02-prepare-base-model:] 'list' object has no attribute 'shape'
-Traceback (most recent call last):
-  File "src/stage-02-prepare-base-model.py", line 67, in <module>
-    prepare_base_model(parsed_args.config, parsed_args.params)
-  File "src/stage-02-prepare-base-model.py", line 39, in prepare_base_model
-    model = prepare_model(
-  File "d:\repositories\aiops\dvc\dvc-dl-tensorflow\src\utils\models.py", line 26, in prepare_model
-    flatten_in = tf.keras.layers.Flatten()(model.outputs)
-  File "C:\Users\Subha\AppData\Roaming\Python\Python38\site-packages\tensorflow\python\keras\engine\base_layer.py", line 951, in __call__
-    return self._functional_construction_call(inputs, args, kwargs,
-  File "C:\Users\Subha\AppData\Roaming\Python\Python38\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1090, in _functional_construction_call
-    outputs = self._keras_tensor_symbolic_call(
-  File "C:\Users\Subha\AppData\Roaming\Python\Python38\site-packages\tensorflow\python\keras\engine\base_layer.py", line 822, in _keras_tensor_symbolic_call
-    return self._infer_output_signature(inputs, args, kwargs, input_masks)
-  File "C:\Users\Subha\AppData\Roaming\Python\Python38\site-packages\tensorflow\python\keras\engine\base_layer.py", line 863, in _infer_output_signature
-    outputs = call_fn(inputs, *args, **kwargs)
-  File "C:\Users\Subha\AppData\Roaming\Python\Python38\site-packages\tensorflow\python\keras\layers\core.py", line 677, in call
-    input_shape = inputs.shape
-AttributeError: 'list' object has no attribute 'shape'
-[2021-10-23 02:32:09,650: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:32:09,652: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:32:09,653: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:32:09,653: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:32:10,752: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
-[2021-10-23 02:32:10,776: INFO: models:] Model compiled Successfully.
-[2021-10-23 02:32:10,776: INFO: stage-02-prepare-base-model:] Model Summary:
-[2021-10-23 02:32:10,790: INFO: stage-02-prepare-base-model:] None
-[2021-10-23 02:32:10,791: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
-[2021-10-23 02:32:10,930: INFO: stage-02-prepare-base-model:] Stage 01 completed successfully >>>>>>
-[2021-10-23 02:38:10,016: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
-[2021-10-23 02:38:10,019: INFO: utils:] YAML File: config/config.yaml parsed Successfully
-[2021-10-23 02:38:10,020: INFO: utils:] YAML File: params.yaml parsed Successfully
-[2021-10-23 02:38:10,020: INFO: utils:] creating directory: artifacts\base
-[2021-10-23 02:38:11,135: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
-[2021-10-23 02:38:11,158: INFO: models:] Model compiled Successfully.
-[2021-10-23 02:38:11,159: INFO: stage-02-prepare-base-model:] Model Summary:
-[2021-10-23 02:38:11,161: INFO: stage-02-prepare-base-model:] Model: "model"
+[2021-10-26 00:17:30,747: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
+[2021-10-26 00:17:30,749: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-26 00:17:30,750: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-10-26 00:17:30,750: INFO: utils:] creating directory: artifacts\base
+[2021-10-26 00:17:32,237: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-10-26 00:17:32,255: INFO: models:] Model compiled Successfully.
+[2021-10-26 00:17:32,255: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-10-26 00:17:32,256: INFO: stage-02-prepare-base-model:] Model: "model"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -129,9 +52,69 @@ _________________________________________________________________
 dense (Dense)                (None, 2)                 50178     
 =================================================================
 Total params: 14,764,866
-Trainable params: 50,178
-Non-trainable params: 14,714,688
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
 _________________________________________________________________
 
-[2021-10-23 02:38:11,161: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
-[2021-10-23 02:38:11,296: INFO: stage-02-prepare-base-model:] Stage 01 completed successfully >>>>>>
+[2021-10-26 00:17:32,258: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-10-26 00:17:32,360: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-10-26 00:27:40,494: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01
+[2021-10-26 00:27:40,495: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-26 00:27:40,496: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-10-26 00:27:40,496: INFO: utils:] creating directory: artifacts\base
+[2021-10-26 00:28:10,961: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-10-26 00:28:10,982: INFO: models:] Model compiled Successfully.
+[2021-10-26 00:28:10,982: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-10-26 00:28:10,984: INFO: stage-02-prepare-base-model:] Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2021-10-26 00:28:10,984: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-10-26 00:28:11,071: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
