@@ -6,11 +6,9 @@ import os
 import pandas as pd
 from tqdm import tqdm
 
-from src.utils.utils import (
-    create_directory,
-    read_yaml,
-    create_save_tensorboard_callbacks
-)
+from src.utils.utils import create_directory, read_yaml
+
+from src.utils.callbacks import save_tensorboard_callbacks, save_checkpoint
 
 log_directory = os.path.join(os.getcwd(), "logs")
 os.makedirs(log_directory, exist_ok=True)
@@ -36,6 +34,9 @@ def prepare_model_callbacks(path_to_config, path_to_params):
     callbacks_dir = os.path.join(artifacts_dir, config["artifacts"]["CALLBACKS_DIR"])
 
     create_directory([tensorboard_logs_dir, checkpoint_dir, callbacks_dir])
+
+    save_tensorboard_callbacks(callbacks_dir, tensorboard_logs_dir)
+    save_checkpoint(callbacks_dir, checkpoint_dir)
 
 
 if __name__ == "__main__":
