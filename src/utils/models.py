@@ -1,3 +1,4 @@
+from re import M
 import tensorflow as tf
 import os
 import logging
@@ -43,3 +44,10 @@ def prepare_model(
     logging.info("Model compiled Successfully.")
 
     return full_model
+
+
+def load_pretrained_model(pretrained_model_path):
+        # Load model
+    model = tf.keras.models.load_model(pretrained_model_path)
+    logging.info(f"Model loaded from {pretrained_model_path}")
+    return model
