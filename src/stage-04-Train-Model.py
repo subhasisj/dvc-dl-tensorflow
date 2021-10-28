@@ -10,6 +10,7 @@ import tensorflow as tf
 from src.utils.utils import create_directory, read_yaml
 from src.utils.models import load_pretrained_model
 from src.utils.callbacks import save_tensorboard_callbacks, save_checkpoint,get_callbacks
+from src.utils.data_manager import train_valid_generator
 
 log_directory = os.path.join(os.getcwd(), "logs")
 os.makedirs(log_directory, exist_ok=True)
@@ -25,6 +26,7 @@ logging.basicConfig(
 
 def train_model(path_to_config, path_to_params):
     config = read_yaml(path_to_config)
+    params = read_yaml(path_to_params)
 
     artifacts_dir = config["artifacts"]["DIR"]
 
@@ -33,12 +35,17 @@ def train_model(path_to_config, path_to_params):
 
     pretrained_model_dir_path = os.path.join(artifacts_dir, config["artifacts"]["BASE_MODEL_DIR"])
     pretrained_model_path = os.path.join(pretrained_model_dir_path, config["artifacts"]["BASE_MODEL_NAME"])
-    
     model = load_pretrained_model(pretrained_model_path)
 
     callbacks_dir = os.path.join(artifacts_dir, config["artifacts"]["CALLBACKS_DIR"])
-
     callbacks = get_callbacks(callbacks_dir)
+
+    train_generator, valid_generator = train_valid_generator(data_dir = config["data"]["DIR"],
+                                                             IMAGE_SIZE = tuple(params["IMAGE_SIZE"][:-1]),
+                                                             BATCH_SIZE = params["BATCH_SIZE"],
+                                                             AUGMENTATION = params["AUGMENTATION"],
+                                            
+                                            )
 
 
 
