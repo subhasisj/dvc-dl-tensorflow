@@ -10,6 +10,7 @@ artifacts:
   CHECKPOINT_DIR: checkpoints
 
 data:
+  DIR: data
   source_path:
     - ../outside_data/dog
     - ../outside_data/cat
