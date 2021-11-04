@@ -8,8 +8,12 @@ from tqdm import tqdm
 import tensorflow as tf
 
 from src.utils.utils import create_directory, read_yaml
-from src.utils.models import load_pretrained_model
-from src.utils.callbacks import save_tensorboard_callbacks, save_checkpoint,get_callbacks
+from src.utils.models import load_pretrained_model,get_unique_model_file_path
+from src.utils.callbacks import (
+    save_tensorboard_callbacks,
+    save_checkpoint,
+    get_callbacks,
+)
 from src.utils.data_manager import train_valid_generator
 
 log_directory = os.path.join(os.getcwd(), "logs")
@@ -30,23 +34,46 @@ def train_model(path_to_config, path_to_params):
 
     artifacts_dir = config["artifacts"]["DIR"]
 
-    TRAINED_MODEL_DIR = os.path.join(artifacts_dir, config["artifacts"]["TRAINED_MODEL_DIR"])
+    TRAINED_MODEL_DIR = os.path.join(
+        artifacts_dir, config["artifacts"]["TRAINED_MODEL_DIR"]
+    )
     create_directory([TRAINED_MODEL_DIR])
 
-    pretrained_model_dir_path = os.path.join(artifacts_dir, config["artifacts"]["BASE_MODEL_DIR"])
-    pretrained_model_path = os.path.join(pretrained_model_dir_path, config["artifacts"]["BASE_MODEL_NAME"])
+    pretrained_model_dir_path = os.path.join(
+        artifacts_dir, config["artifacts"]["BASE_MODEL_DIR"]
+    )
+    pretrained_model_path = os.path.join(
+        pretrained_model_dir_path, config["artifacts"]["UPDATED_MODEL_NAME"]
+    )
     model = load_pretrained_model(pretrained_model_path)
 
     callbacks_dir = os.path.join(artifacts_dir, config["artifacts"]["CALLBACKS_DIR"])
     callbacks = get_callbacks(callbacks_dir)
 
-    train_generator, valid_generator = train_valid_generator(data_dir = config["data"]["DIR"],
-                                                             IMAGE_SIZE = tuple(params["IMAGE_SIZE"][:-1]),
-                                                             BATCH_SIZE = params["BATCH_SIZE"],
-                                                             AUGMENTATION = params["AUGMENTATION"],
-                                            
-                                            )
+    train_generator, valid_generator = train_valid_generator(
+        data_dir=config["data"]["DIR"],
+        IMAGE_SIZE=tuple(params["IMAGE_SIZE"][:-1]),
+        BATCH_SIZE=params["BATCH_SIZE"],
+        AUGMENTATION=params["AUGMENTATION"],
+    )
 
+    steps_per_epoch = train_generator.samples // train_generator.batch_size
+    validation_steps = valid_generator.samples // valid_generator.batch_size
+
+    model.fit(
+        train_generator,
+        validation_data=valid_generator,
+        epochs=params["EPOCHS"],
+        steps_per_epoch=steps_per_epoch,
+        validation_steps=validation_steps,
+        callbacks=callbacks,
+    )
+
+    FINETUNED_MODEL_DIR = os.path.join(TRAINED_MODEL_DIR, config["artifacts"]["FINETUNED_MODEL_DIR"])
+    create_directory([FINETUNED_MODEL_DIR])
+
+    MODEL_FILE_PATH = get_unique_model_file_path(FINETUNED_MODEL_DIR)
+    model.save(MODEL_FILE_PATH)
 
 
 if __name__ == "__main__":

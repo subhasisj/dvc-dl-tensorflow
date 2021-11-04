@@ -4,3 +4,8 @@ data/cat/
 data/dog/
 *.h5
 __pycache__
+*.callback
+logs/
+*events.out*
+*.pb
+*.json.gz
