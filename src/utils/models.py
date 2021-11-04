@@ -2,6 +2,7 @@ from re import M
 import tensorflow as tf
 import os
 import logging
+from src.utils.utils import get_timestamp
 
 
 def get_vgg16(input_shape, model_path):
@@ -37,7 +38,7 @@ def prepare_model(
 
     full_model.compile(
         optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),
-        loss="categorical_crossentropy",
+        loss=tf.keras.losses.CategoricalCrossentropy(),
         metrics=["accuracy"],
     )
 
@@ -47,7 +48,12 @@ def prepare_model(
 
 
 def load_pretrained_model(pretrained_model_path):
-        # Load model
+    # Load model
     model = tf.keras.models.load_model(pretrained_model_path)
     logging.info(f"Model loaded from {pretrained_model_path}")
     return model
+
+
+def get_unique_model_file_path(finetuned_model_dir, model_name="model"):
+
+    return os.path.join(finetuned_model_dir, f"{get_timestamp(model_name)}.h5")
