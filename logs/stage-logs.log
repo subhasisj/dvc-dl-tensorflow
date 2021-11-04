@@ -118,3 +118,482 @@ _________________________________________________________________
 
 [2021-10-26 00:28:10,984: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
 [2021-10-26 00:28:11,071: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-10-29 00:28:49,214: INFO: stage-03-Callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-10-29 00:28:49,216: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 00:28:49,216: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-10-29 00:28:49,217: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-10-29 00:28:49,217: INFO: utils:] creating directory: artifacts\callbacks
+[2021-10-29 00:28:50,397: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard_logs_Fri_Oct_29_00_28_49_2021.callback
+[2021-10-29 00:28:50,398: ERROR: stage-03-Callbacks:] [Errno 2] No such file or directory: 'artifacts\\callbacks\\artifacts\\checkpoints\\checkpoint.callback'
+Traceback (most recent call last):
+  File "src/stage-03-Callbacks.py", line 50, in <module>
+    prepare_model_callbacks(parsed_args.config, parsed_args.params)
+  File "src/stage-03-Callbacks.py", line 39, in prepare_model_callbacks
+    save_checkpoint(callbacks_dir, checkpoint_dir)
+  File "d:\repositories\aiops\dvc\dvc-dl-tensorflow\src\utils\callbacks.py", line 28, in save_checkpoint
+    joblib.dump(checkpoint_callback, checkpoint_callback_file)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\joblib\numpy_pickle.py", line 479, in dump
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\callbacks\\artifacts\\checkpoints\\checkpoint.callback'
+[2021-10-29 00:35:43,104: INFO: stage-03-Callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-10-29 00:35:43,106: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 00:35:43,106: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-10-29 00:35:43,106: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-10-29 00:35:43,106: INFO: utils:] creating directory: artifacts\callbacks
+[2021-10-29 00:35:44,228: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard_logs_Fri_Oct_29_00_35_43_2021.callback
+[2021-10-29 00:35:44,233: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-10-29 00:35:44,233: INFO: stage-03-Callbacks:] Stage 03 completed successfully >>>>>>
+[2021-10-29 01:27:38,963: INFO: stage-04-Train-Model:]  >>>>>> Starting Stage 04 - Training Started
+[2021-10-29 01:27:38,965: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 01:27:38,965: INFO: utils:] creating directory: artifacts\model
+[2021-10-29 01:28:11,774: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-10-29 01:28:11,777: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-10-29 01:28:11,778: INFO: callbacks:] Loaded 3 callbacks from artifacts\callbacks
+[2021-10-29 01:28:11,779: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+[2021-10-29 01:30:37,649: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-10-29 01:30:37,651: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 01:30:37,651: INFO: utils:] creating directory: artifacts\model
+[2021-10-29 01:30:39,946: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-10-29 01:30:39,947: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-10-29 01:30:39,948: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-10-29 01:30:39,949: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-10-29 02:13:18,283: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-10-29 02:13:18,286: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 02:13:18,287: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-10-29 02:13:18,288: INFO: utils:] creating directory: artifacts\model
+[2021-10-29 02:13:20,540: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-10-29 02:13:20,541: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-10-29 02:13:20,542: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-10-29 02:13:20,542: ERROR: stage-04-Train-Model:] image_dataset_from_directory() got an unexpected keyword argument 'rescale'
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 60, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 46, in train_model
+    AUGMENTATION = params["AUGMENTATION"],
+  File "d:\repositories\aiops\dvc\dvc-dl-tensorflow\src\utils\data_manager.py", line 23, in train_valid_dataset
+    label_mode='binary'
+TypeError: image_dataset_from_directory() got an unexpected keyword argument 'rescale'
+[2021-10-29 02:28:17,768: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-10-29 02:28:17,771: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 02:28:17,772: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-10-29 02:28:17,773: INFO: utils:] creating directory: artifacts\model
+[2021-10-29 02:28:19,836: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-10-29 02:28:19,837: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-10-29 02:28:19,838: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-10-29 02:28:20,085: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-10-29 02:29:13,179: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-10-29 02:29:13,182: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-10-29 02:29:13,184: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-10-29 02:29:13,184: INFO: utils:] creating directory: artifacts\model
+[2021-10-29 02:29:15,284: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-10-29 02:29:15,285: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-10-29 02:29:15,286: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-10-29 02:29:15,504: INFO: data_manager:] Data generators created.
+[2021-10-29 02:29:15,505: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-11-05 01:03:00,928: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:03:00,930: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:03:00,932: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:03:00,933: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:03:35,429: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-05 01:03:35,432: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-11-05 01:03:35,433: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-05 01:03:35,673: INFO: data_manager:] Data generators created.
+[2021-11-05 01:03:35,673: ERROR: stage-04-Train-Model:] You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 81, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 69, in train_model
+    callbacks=callbacks,
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1032, in fit
+    self._assert_compile_was_called()
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2592, in _assert_compile_was_called
+    raise RuntimeError('You must compile your model before '
+RuntimeError: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+[2021-11-05 01:07:16,391: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01 - Preparing Base Model
+[2021-11-05 01:07:16,393: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:07:16,394: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:07:16,394: INFO: utils:] creating directory: artifacts\base
+[2021-11-05 01:07:18,934: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-11-05 01:07:18,954: INFO: models:] Model compiled Successfully.
+[2021-11-05 01:07:18,955: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-11-05 01:07:18,957: INFO: stage-02-prepare-base-model:] Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2021-11-05 01:07:18,957: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:07:19,099: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-11-05 01:07:31,179: INFO: stage-03-Callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-11-05 01:07:31,181: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:07:31,181: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-11-05 01:07:31,181: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-11-05 01:07:31,181: INFO: utils:] creating directory: artifacts\callbacks
+[2021-11-05 01:07:31,999: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard_logs_Fri_Nov__5_01_07_31_2021.callback
+[2021-11-05 01:07:32,003: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-11-05 01:07:32,003: INFO: stage-03-Callbacks:] Stage 03 completed successfully >>>>>>
+[2021-11-05 01:07:41,806: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:07:41,808: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:07:41,809: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:07:41,809: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:07:43,930: WARNING: hdf5_format:] No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-05 01:07:43,931: INFO: models:] Model loaded from artifacts\base\VGG16_base_model.h5
+[2021-11-05 01:07:43,938: INFO: callbacks:] Loaded 3 callbacks from artifacts\callbacks
+[2021-11-05 01:07:44,171: INFO: data_manager:] Data generators created.
+[2021-11-05 01:07:44,171: ERROR: stage-04-Train-Model:] You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 81, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 69, in train_model
+    callbacks=callbacks,
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1032, in fit
+    self._assert_compile_was_called()
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2592, in _assert_compile_was_called
+    raise RuntimeError('You must compile your model before '
+RuntimeError: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+[2021-11-05 01:12:00,411: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:12:00,412: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:12:00,413: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:12:00,413: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:12:02,534: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:12:02,535: INFO: callbacks:] Loaded 3 callbacks from artifacts\callbacks
+[2021-11-05 01:12:02,753: INFO: data_manager:] Data generators created.
+[2021-11-05 01:12:03,697: ERROR: stage-04-Train-Model:] in user code:
+
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:805 train_function  *
+        return step_function(self, iterator)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:795 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1259 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2730 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3417 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:788 run_step  **
+        outputs = model.train_step(data)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        y, y_pred, sample_weight, regularization_losses=self.losses)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:203 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:152 __call__
+        losses = call_fn(y_true, y_pred)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:256 call  **
+        return ag_fn(y_true, y_pred, **self._fn_kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:1537 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\backend.py:4833 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1134 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 2) are incompatible
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 81, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 69, in train_model
+    callbacks=callbacks,
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1100, in fit
+    tmp_logs = self.train_function(iterator)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 828, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 871, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 726, in _initialize
+    *args, **kwds))
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 2969, in _get_concrete_function_internal_garbage_collected
+    graph_function, _ = self._maybe_define_function(args, kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 3361, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 3206, in _create_graph_function
+    capture_by_value=self._capture_by_value),
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\func_graph.py", line 990, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 634, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\func_graph.py", line 977, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:805 train_function  *
+        return step_function(self, iterator)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:795 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1259 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2730 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3417 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:788 run_step  **
+        outputs = model.train_step(data)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        y, y_pred, sample_weight, regularization_losses=self.losses)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:203 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:152 __call__
+        losses = call_fn(y_true, y_pred)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:256 call  **
+        return ag_fn(y_true, y_pred, **self._fn_kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:1537 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\backend.py:4833 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1134 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 2) are incompatible
+
+[2021-11-05 01:14:15,770: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:14:15,772: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:14:15,772: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:14:15,773: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:14:17,930: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:14:17,931: INFO: callbacks:] Loaded 3 callbacks from artifacts\callbacks
+[2021-11-05 01:14:18,155: INFO: data_manager:] Data generators created.
+[2021-11-05 01:14:18,490: ERROR: stage-04-Train-Model:] in user code:
+
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:805 train_function  *
+        return step_function(self, iterator)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:795 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1259 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2730 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3417 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:788 run_step  **
+        outputs = model.train_step(data)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        y, y_pred, sample_weight, regularization_losses=self.losses)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:203 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:152 __call__
+        losses = call_fn(y_true, y_pred)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:256 call  **
+        return ag_fn(y_true, y_pred, **self._fn_kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:1537 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\backend.py:4833 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1134 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 2) are incompatible
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 81, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 69, in train_model
+    callbacks=callbacks,
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1100, in fit
+    tmp_logs = self.train_function(iterator)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 828, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 871, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 726, in _initialize
+    *args, **kwds))
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 2969, in _get_concrete_function_internal_garbage_collected
+    graph_function, _ = self._maybe_define_function(args, kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 3361, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\function.py", line 3206, in _create_graph_function
+    capture_by_value=self._capture_by_value),
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\func_graph.py", line 990, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\eager\def_function.py", line 634, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\func_graph.py", line 977, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:805 train_function  *
+        return step_function(self, iterator)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:795 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1259 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2730 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3417 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:788 run_step  **
+        outputs = model.train_step(data)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        y, y_pred, sample_weight, regularization_losses=self.losses)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:203 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:152 __call__
+        losses = call_fn(y_true, y_pred)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:256 call  **
+        return ag_fn(y_true, y_pred, **self._fn_kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\losses.py:1537 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\util\dispatch.py:201 wrapper
+        return target(*args, **kwargs)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\backend.py:4833 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1134 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 2) are incompatible
+
+[2021-11-05 01:16:55,843: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:16:55,846: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:16:55,848: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:16:55,848: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:16:58,181: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:16:58,182: INFO: callbacks:] Loaded 3 callbacks from artifacts\callbacks
+[2021-11-05 01:16:58,298: INFO: data_manager:] data augmentation is used for training
+[2021-11-05 01:16:58,407: INFO: data_manager:] train and valid generator is created.
+[2021-11-05 01:17:29,470: WARNING: summary_ops_v2:] Trace already enabled
+[2021-11-05 01:17:29,471: ERROR: stage-04-Train-Model:] Another profiler is running.
+Traceback (most recent call last):
+  File "src/stage-04-Train-Model.py", line 81, in <module>
+    train_model(parsed_args.config, parsed_args.params)
+  File "src/stage-04-Train-Model.py", line 69, in train_model
+    callbacks=callbacks,
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    callbacks.on_train_batch_begin(step)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 444, in on_train_batch_begin
+    self._call_batch_hook(ModeKeys.TRAIN, 'begin', batch, logs=logs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 294, in _call_batch_hook
+    self._call_batch_begin_hook(mode, batch, logs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 303, in _call_batch_begin_hook
+    self._call_batch_hook_helper(hook_name, batch, logs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 356, in _call_batch_hook_helper
+    hook(batch, logs)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 2318, in on_train_batch_begin
+    self._start_trace()
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\keras\callbacks.py", line 2346, in _start_trace
+    profiler.start(logdir=self._train_dir)
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tensorflow\python\profiler\profiler_v2.py", line 116, in start
+    'Another profiler is running.')
+tensorflow.python.framework.errors_impl.AlreadyExistsError: Another profiler is running.
+[2021-11-05 01:18:39,286: INFO: stage-03-Callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-11-05 01:18:39,288: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:18:39,288: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-11-05 01:18:39,288: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-11-05 01:18:39,288: INFO: utils:] creating directory: artifacts\callbacks
+[2021-11-05 01:18:40,374: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard_logs_Fri_Nov__5_01_18_39_2021.callback
+[2021-11-05 01:18:40,377: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-11-05 01:18:40,377: INFO: stage-03-Callbacks:] Stage 03 completed successfully >>>>>>
+[2021-11-05 01:19:13,237: INFO: stage-03-Callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-11-05 01:19:13,239: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:19:13,239: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-11-05 01:19:13,240: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-11-05 01:19:13,240: INFO: utils:] creating directory: artifacts\callbacks
+[2021-11-05 01:19:14,310: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard_logs_Fri_Nov__5_01_19_13_2021.callback
+[2021-11-05 01:19:14,313: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-11-05 01:19:14,314: INFO: stage-03-Callbacks:] Stage 03 completed successfully >>>>>>
+[2021-11-05 01:19:24,198: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:19:24,200: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:19:24,201: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:19:24,201: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:19:27,015: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:19:27,016: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-05 01:19:27,129: INFO: data_manager:] data augmentation is used for training
+[2021-11-05 01:19:27,238: INFO: data_manager:] train and valid generator is created.
+[2021-11-05 01:19:45,515: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-11-05 01:37:59,082: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-05 01:37:59,084: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 01:37:59,085: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 01:37:59,085: INFO: utils:] creating directory: artifacts\model
+[2021-11-05 01:38:01,627: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 01:38:01,628: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-05 01:38:01,751: INFO: data_manager:] data augmentation is used for training
+[2021-11-05 01:38:01,864: INFO: data_manager:] train and valid generator is created.
+[2021-11-05 01:38:17,300: INFO: utils:] creating directory: artifacts\model\finetuned
+[2021-11-05 01:38:17,401: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
