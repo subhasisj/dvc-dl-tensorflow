@@ -26,7 +26,7 @@ def get_data(path_to_config):
 
     # Download Data from source_path to local_path
     for src_dir, target_dir in tqdm(
-        zip(remote_data_source, local_data_source), total=2, colour="blue"
+        zip(remote_data_source, local_data_source), total=2, colour = "green"
     ):
         create_directory([target_dir])
         copy_files(src_dir, target_dir)
