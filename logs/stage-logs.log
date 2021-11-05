@@ -597,3 +597,149 @@ tensorflow.python.framework.errors_impl.AlreadyExistsError: Another profiler is 
 [2021-11-05 01:38:17,401: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
 
 
+[2021-11-05 02:25:56,202: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:25:56,203: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:25:56,209: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'colour': 'blue'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, colour="blue"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 966, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'colour': 'blue'}"
+[2021-11-05 02:26:42,988: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:26:42,989: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:26:42,995: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'colour': 'blue'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, colour="blue"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 966, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'colour': 'blue'}"
+[2021-11-05 02:27:07,400: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:27:07,402: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:27:07,408: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'colormap': 'magenta'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, colormap="magenta"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 966, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'colormap': 'magenta'}"
+[2021-11-05 02:27:19,653: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:27:19,655: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:27:19,662: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'color': 'blue'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, color = "blue"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 966, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'color': 'blue'}"
+[2021-11-05 02:29:47,830: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:29:47,832: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:29:47,837: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'color': 'green'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, color = "green"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 966, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'color': 'green'}"
+[2021-11-05 02:31:56,429: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:31:56,431: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:31:56,436: ERROR: stage-01-load-n-save:] "Unknown argument(s): {'color': 'green'}"
+Traceback (most recent call last):
+  File "src/stage-01-load-n-save.py", line 42, in <module>
+    get_data(parsed_args.config)
+  File "src/stage-01-load-n-save.py", line 29, in get_data
+    zip(remote_data_source, local_data_source), total=2, color = "green"
+  File "C:\Users\Subha\.conda\envs\nlp\lib\site-packages\tqdm\std.py", line 1018, in __init__
+    TqdmKeyError("Unknown argument(s): " + str(kwargs)))
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'color': 'green'}"
+[2021-11-05 02:32:32,903: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:32:32,905: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:32:32,912: INFO: utils:] creating directory: ./data/dog
+[2021-11-05 02:32:34,745: INFO: utils:] creating directory: ./data/cat
+[2021-11-05 02:32:35,442: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
+[2021-11-05 02:32:45,576: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 02:32:45,578: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 02:32:45,587: INFO: utils:] creating directory: ./data/dog
+[2021-11-05 02:32:46,146: INFO: utils:] creating directory: ./data/cat
+[2021-11-05 02:32:46,354: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
+[2021-11-05 23:24:53,252: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 23:24:53,253: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 23:24:53,261: INFO: utils:] creating directory: ./data/dog
+[2021-11-05 23:24:55,209: INFO: utils:] creating directory: ./data/cat
+[2021-11-05 23:24:56,806: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
+[2021-11-05 23:57:37,498: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-05 23:57:37,500: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 23:57:37,509: INFO: utils:] creating directory: ./data/dog
+[2021-11-05 23:57:37,876: INFO: utils:] creating directory: ./data/cat
+[2021-11-05 23:57:38,093: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
+[2021-11-05 23:58:18,611: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01 - Preparing Base Model
+[2021-11-05 23:58:18,613: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-05 23:58:18,614: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-05 23:58:18,614: INFO: utils:] creating directory: artifacts\base
+[2021-11-05 23:58:51,197: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-11-05 23:58:51,222: INFO: models:] Model compiled Successfully.
+[2021-11-05 23:58:51,222: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-11-05 23:58:51,224: INFO: stage-02-prepare-base-model:] Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2021-11-05 23:58:51,224: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-11-05 23:58:51,500: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
