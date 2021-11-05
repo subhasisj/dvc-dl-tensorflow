@@ -743,3 +743,211 @@ _________________________________________________________________
 
 [2021-11-05 23:58:51,224: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
 [2021-11-05 23:58:51,500: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-11-06 00:35:44,279: INFO: stage-03-prepare-callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-11-06 00:35:44,281: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:35:44,281: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-11-06 00:35:44,282: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-11-06 00:35:44,282: INFO: utils:] creating directory: artifacts\callbacks
+[2021-11-06 00:35:45,423: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard.callback
+[2021-11-06 00:35:45,427: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-11-06 00:35:45,427: INFO: stage-03-prepare-callbacks:] Stage 03 completed successfully >>>>>>
+[2021-11-06 00:36:33,132: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01 - Preparing Base Model
+[2021-11-06 00:36:33,134: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:36:33,135: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:36:33,135: INFO: utils:] creating directory: artifacts\base
+[2021-11-06 00:36:35,367: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-11-06 00:36:35,384: INFO: models:] Model compiled Successfully.
+[2021-11-06 00:36:35,385: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-11-06 00:36:35,386: INFO: stage-02-prepare-base-model:] Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2021-11-06 00:36:35,386: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:36:35,469: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-11-06 00:44:42,817: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-06 00:44:42,819: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:44:42,820: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:44:42,821: INFO: utils:] creating directory: artifacts\model
+[2021-11-06 00:44:45,016: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:44:45,017: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-06 00:44:45,141: INFO: data_manager:] data augmentation is used for training
+[2021-11-06 00:44:45,267: INFO: data_manager:] train and valid generator is created.
+[2021-11-06 00:45:22,309: INFO: utils:] creating directory: artifacts\model\finetuned
+[2021-11-06 00:45:22,402: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-11-06 00:45:56,768: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-06 00:45:56,770: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:45:56,771: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:45:56,771: INFO: utils:] creating directory: artifacts\model
+[2021-11-06 00:45:59,029: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:45:59,030: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-06 00:45:59,142: INFO: data_manager:] data augmentation is used for training
+[2021-11-06 00:45:59,268: INFO: data_manager:] train and valid generator is created.
+[2021-11-06 00:46:14,957: INFO: utils:] creating directory: artifacts\model\finetuned
+[2021-11-06 00:46:15,074: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-11-06 00:47:36,760: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-06 00:47:36,762: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:47:36,763: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:47:36,763: INFO: utils:] creating directory: artifacts\model
+[2021-11-06 00:47:38,852: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:47:38,853: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-06 00:47:38,967: INFO: data_manager:] data augmentation is used for training
+[2021-11-06 00:47:39,092: INFO: data_manager:] train and valid generator is created.
+[2021-11-06 00:47:54,339: INFO: utils:] creating directory: artifacts\model\finetuned
+[2021-11-06 00:47:54,432: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+
+[2021-11-06 00:52:03,047: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-06 00:52:03,049: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:52:03,050: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:52:03,051: INFO: utils:] creating directory: artifacts\model
+[2021-11-06 00:52:05,233: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:52:05,234: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-06 00:52:05,354: INFO: data_manager:] data augmentation is used for training
+[2021-11-06 00:52:05,482: INFO: data_manager:] train and valid generator is created.
+[2021-11-06 00:52:46,787: INFO: stage-03-prepare-callbacks:]  >>>>>> Starting Stage 03 - Preparing Callbacks
+[2021-11-06 00:52:46,789: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:52:46,789: INFO: utils:] creating directory: artifacts\tensorboard_logs
+[2021-11-06 00:52:46,789: INFO: utils:] creating directory: artifacts\checkpoints
+[2021-11-06 00:52:46,789: INFO: utils:] creating directory: artifacts\callbacks
+[2021-11-06 00:52:47,875: INFO: callbacks:] Tensorboard Callbacks written to artifacts\callbacks\tensorboard.callback
+[2021-11-06 00:52:47,879: INFO: callbacks:] Checkpoint Callbacks written to artifacts\callbacks\checkpoint.callback
+[2021-11-06 00:52:47,880: INFO: stage-03-prepare-callbacks:] Stage 03 completed successfully >>>>>>
+[2021-11-06 00:52:52,137: INFO: stage-02-prepare-base-model:]  >>>>>> Starting Stage 01 - Preparing Base Model
+[2021-11-06 00:52:52,139: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:52:52,140: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:52:52,140: INFO: utils:] creating directory: artifacts\base
+[2021-11-06 00:52:53,964: INFO: models:] Model saved to artifacts\base\VGG16_base_model.h5
+[2021-11-06 00:52:53,980: INFO: models:] Model compiled Successfully.
+[2021-11-06 00:52:53,981: INFO: stage-02-prepare-base-model:] Model Summary:
+[2021-11-06 00:52:53,982: INFO: stage-02-prepare-base-model:] Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2021-11-06 00:52:53,982: INFO: stage-02-prepare-base-model:] Saving model to artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:52:54,061: INFO: stage-02-prepare-base-model:] Stage 02 completed successfully >>>>>>
+[2021-11-06 00:52:55,815: INFO: stage-01-load-n-save:]  >>>>>> Starting Stage 01
+[2021-11-06 00:52:55,816: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:52:55,824: INFO: utils:] creating directory: ./data/dog
+[2021-11-06 00:52:58,812: INFO: utils:] creating directory: ./data/cat
+[2021-11-06 00:53:00,701: INFO: stage-01-load-n-save:] Stage 01 completed successfully >>>>>>
+[2021-11-06 00:53:06,684: INFO: stage-04-Train-Model:]  
+
+>>>>>> Starting Stage 04 - Training Started
+[2021-11-06 00:53:06,686: INFO: utils:] YAML File: config/config.yaml parsed Successfully
+[2021-11-06 00:53:06,687: INFO: utils:] YAML File: params.yaml parsed Successfully
+[2021-11-06 00:53:06,687: INFO: utils:] creating directory: artifacts\model
+[2021-11-06 00:53:08,812: INFO: models:] Model loaded from artifacts\base\updated_VGG16_base_model.h5
+[2021-11-06 00:53:08,813: INFO: callbacks:] Loaded 2 callbacks from artifacts\callbacks
+[2021-11-06 00:53:08,922: INFO: data_manager:] data augmentation is used for training
+[2021-11-06 00:53:09,048: INFO: data_manager:] train and valid generator is created.
+[2021-11-06 00:53:26,166: INFO: utils:] creating directory: artifacts\model\finetuned
+[2021-11-06 00:53:26,166: INFO: stage-04-Train-Model:] Saving model to artifacts\model\finetuned\model_Sat_Nov__6_00_53_26_2021.h5
+[2021-11-06 00:53:26,388: INFO: stage-04-Train-Model:] Stage 04 Training completed successfully >>>>>>
+
+

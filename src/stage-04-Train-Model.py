@@ -73,6 +73,7 @@ def train_model(path_to_config, path_to_params):
     create_directory([FINETUNED_MODEL_DIR])
 
     MODEL_FILE_PATH = get_unique_model_file_path(FINETUNED_MODEL_DIR)
+    logging.info(f"Saving model to {MODEL_FILE_PATH}")
     model.save(MODEL_FILE_PATH)
 
 
